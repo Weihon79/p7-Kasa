@@ -3,19 +3,21 @@ import Home from './pages/home/Home';
 import About from './pages/about/About';
 import NotFound from './pages/notfound/NotFound';
 import logements from './data/logements.json';
-import Header from './components/Header';
+import Header from './components/header/Header';
+import Banner from './components/banner/Banner';
 
 
 function App() {
   return (
-    <>
+    <div className='container'>
       <Header />
+      <Banner />
       <Routes>
           <Route path="/" element={<Home logements={logements}/>} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

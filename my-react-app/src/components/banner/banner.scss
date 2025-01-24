@@ -1,0 +1,45 @@
+@use '../../styles/variables' as v;
+
+.banner {
+    position: relative;
+    border-radius: v.$mobile-banner-radius;
+    width: v.$common-width;
+    height: v.$mobile-banner-height;
+
+    @media screen and (min-width: 769px) {
+        height: v.$desktop-banner-height;
+        border-radius: v.$desktop-banner-radius;
+        box-shadow: 0px 4px 4px 0px #00000040;
+    }
+
+    & img {
+        border-radius: inherit;
+        width: v.$common-width;
+        height: v.$common-height;
+        object-fit: cover;
+    }
+
+    &__sombre {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: inherit;
+        width: v.$common-width;
+        height: v.$common-height;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    &__txt {
+        padding: 0 15px 0 15px;
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+
+        @media screen and (min-width: 769px) {
+            font-size: 48px;
+        }
+    }
+}
