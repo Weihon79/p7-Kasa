@@ -1,0 +1,37 @@
+@use "../../styles/variables" as v;
+
+.collapse {
+    display: flex;
+    flex-direction: column;
+    background-color: v.$collapse-bg;
+    border-radius: v.$collapse-radius;
+    padding: v.$collapse-padding;
+    height: v.$collapse-height-mobile;
+    color: v.$collapse-txt-color;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    @media screen and (min-width: 769px) {
+        height: v.$collapse-height-desktop;
+    }
+
+    &__header {
+        width: v.$common-width;
+        height: v.$common-height;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__content {
+        max-height: 0;
+        padding: 0 10px;
+        transition: max-height 0.3s ease;
+        overflow: hidden;
+    }
+
+    &--open .collapse__content {
+        max-height: 500px;
+    }
+}

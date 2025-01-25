@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 
 function Collapse({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,13 +9,13 @@ function Collapse({ title, children }) {
   };
 
   return (
-    <div className="collapse">
-      <div className="collapse-header" onClick={toggleCollapse}>
+    <div className={`collapse ${isOpen ? 'collapse--open' : ''}`}>
+    <div className="collapse__header" onClick={toggleCollapse}>
         <h2>{title}</h2>
-        <i className={`fa-solid ${isOpen ? 'fa-angle-down' : 'fa-angle-up'}`}></i>
-      </div>
-      {isOpen && <div className="collapse-content">{children}</div>}
+        {isOpen ? <FaAngleDown /> : <FaAngleUp />}
     </div>
+    {isOpen && <div className="collapse__content">{children}</div>}
+    </div>   
   );
 }
 
