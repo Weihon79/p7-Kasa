@@ -1,0 +1,9 @@
+.home__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+
+    @media screen and (min-width: 769px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

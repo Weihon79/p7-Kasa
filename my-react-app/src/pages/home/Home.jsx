@@ -1,11 +1,13 @@
+import Card from '../../components/card/Card';
+
 function Home({ logements }) {
     return (
-        <div>
-            <ul>
+        <div className="home">
+            <section className="home__grid">
                 {logements.map((logement) => (
-                    <li key={logement.id}>{logement.title}</li>
+                    <Card key={logement.id} logement={logement} />
                 ))}
-            </ul>
+            </section>
         </div>
     );
 }

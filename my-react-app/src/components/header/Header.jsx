@@ -1,10 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import Logo from '../../assets/logo/LOGO.svg';
+import MobileLogo from '../../assets/logo/MOBILELOGO.svg';
 
 function Header() {
   return (
-    <header className='header'>
-      <img src={Logo} alt="Logo" />
+    <header className="header">
+      <img src={Logo} alt="Logo" className="header__logo-desktop" />
+      <img src={MobileLogo} alt='Mobile Logo' className="header__logo-mobile" />
       <nav>
         <NavLink
           to="/"
