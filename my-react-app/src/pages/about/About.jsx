@@ -1,8 +1,9 @@
+import aboutBanner from '../../assets/banner/aboutBanner.png'
+
 function About() {
     return (
-      <div>
-        <h1>À propos</h1>
-        <p>Ceci est la page À propos.</p>
+      <div className="banner-container">
+        <img src={aboutBanner} alt='banner' className='banner-container__image' />
       </div>
     );
   }

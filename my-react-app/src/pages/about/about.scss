@@ -1,0 +1,20 @@
+@use '../../styles/variables' as v;
+
+.banner-container {
+    border-radius: v.$mobile-banner-radius;
+    width: v.$common-width;
+    height: v.$mobile-banner-height;
+    margin-bottom: 45px;
+
+    @media screen and (min-width: 769px) {
+        height: v.$desktop-banner-height;
+        border-radius: v.$desktop-banner-radius;
+    }
+
+    &__image {
+        border-radius: inherit;
+        width: v.$common-width;
+        height: v.$common-height;
+        object-fit: cover;
+    }
+}
