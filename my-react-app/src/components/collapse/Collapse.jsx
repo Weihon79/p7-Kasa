@@ -1,22 +1,35 @@
-import { useState } from 'react';
-import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
+import React, { useState } from "react";
 
-function Collapse({ title, children }) {
+const Collapse = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleCollapse = () => {
-    setIsOpen(!isOpen);
+  const display = () => {
+    if (isOpen) {
+      // On déclenche la fermeture, mais la transition aura lieu d'abord
+      setIsOpen(false);
+    } else {
+      // Si c'est fermé, on l'ouvre
+      setIsOpen(true);
+    }
   };
 
   return (
-    <div className={`collapse ${isOpen ? 'collapse--open' : ''}`}>
-    <div className="collapse__header" onClick={toggleCollapse}>
+    <div className="collapse__dropdown__container">
+      <div className="collapse__dropdown__title">
         <h2>{title}</h2>
-        {isOpen ? <FaAngleDown /> : <FaAngleUp />}
+        <p>
+          <i onClick={display}
+            className={`fa-solid fa-chevron-up ${isOpen ? "rotate" : ""}`}
+          />
+        </p>
+      </div>
+      <div
+        className={`collapse__dropdown__content ${isOpen ? "open" : ""}`}
+      >
+        <p>{content}</p>
+      </div>
     </div>
-    {isOpen && <div className="collapse__content">{children}</div>}
-    </div>   
   );
-}
+};
 
 export default Collapse;

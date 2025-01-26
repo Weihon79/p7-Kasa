@@ -1,37 +1,82 @@
 @use "../../styles/variables" as v;
 
-.collapse {
-    display: flex;
-    flex-direction: column;
-    background-color: v.$collapse-bg;
-    border-radius: v.$collapse-radius;
-    padding: v.$collapse-padding;
-    height: v.$collapse-height-mobile;
-    color: v.$collapse-txt-color;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+
+.collapse__dropdown {
+    width: 100%;
+    max-width: 1023px;
 
     @media screen and (min-width: 769px) {
-        height: v.$collapse-height-desktop;
+        margin: 0 auto;
     }
 
-    &__header {
-        width: v.$common-width;
-        height: v.$common-height;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
+    &__title {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    width: 100%;
+    background-color: #FF6060;
+    margin: 0 auto;
+    margin-top: 24px;
+    border-radius: 5px;
+
+    @media screen and (min-width: 769px) {
+        width: 100%;
+    }
+
+        h2 {
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+
+            @media screen and (min-width: 769px) {
+                font-size: 24px;
+            }
+        }
+
+        p {
+            display: flex;
+            align-items: center;
+            color: white;
+
+            i {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            }
+        }
     }
 
     &__content {
+        background-color: #F6F6F673;
+        width: 100%;
+        border-radius: 5px;
         max-height: 0;
-        padding: 0 10px;
-        transition: max-height 0.3s ease;
+        opacity: 0;
         overflow: hidden;
-    }
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    
+        &.open {
+          max-height: 500px;
+          opacity: 1;
+        }
 
-    &--open .collapse__content {
-        max-height: 500px;
+        @media screen and (min-width: 769px) {
+            width: 100%;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: 400;
+            color: black;
+            margin: 0 auto;
+            padding: 12px;
+        }
     }
 }
+
+.collapse__dropdown__title i {
+    transform: rotate(0deg); /* Par défaut, la flèche pointe vers le haut */
+  }
+  
+  .collapse__dropdown__title i.rotate {
+    transform: rotate(-180deg); /* Lors de l'ouverture, la flèche tourne à 180° */
+  }
