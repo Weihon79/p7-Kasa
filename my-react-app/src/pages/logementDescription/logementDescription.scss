@@ -1,0 +1,123 @@
+@use "../../styles/variables" as v;
+
+.carousel {
+    position: relative;
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        outline: none;
+        border: none;
+        background: transparent;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+
+        transform: translate(0%, -50%);
+        
+        @media screen and (min-width: 769px) {
+            font-size: 48px;
+        }
+
+        &:hover {
+            transform: translate(0%, -50%) scale(1.2);
+        }
+    }
+
+    & img {
+        height: 255px;
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+
+        @media screen and (min-width: 769px) {
+            height: 415px;
+            border-radius: 25px;
+        }
+    }
+
+    
+}
+
+.prev {
+    left: 10px;
+
+    @media screen and (min-width: 769px) {
+        left: 20px;
+    }
+}
+
+.next {
+    right: 10px;
+
+    @media screen and (min-width: 769px) {
+        right: 20px;
+    }
+}
+
+.carousel__dots {
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+
+    .carousel__dot {
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        background-color: black;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+
+        &.active {
+            background-color: #FF6060; // Choisir la couleur de l'active
+        }
+    }
+}
+
+.logement-description {
+    display: flex;
+    flex-direction: column;
+
+    & h2 {
+        font-size: 18px;
+        color: v.$common-red;
+        margin-bottom: 10px;
+
+        @media screen and (min-width: 769px) {
+            font-size: 36px;
+        }
+    }
+
+    & h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+
+        @media screen and (min-width: 769px) {
+            font-size: 18px;
+        }
+    }
+
+    & h2, h3 {
+        font-weight: 500;
+    }
+
+    &__tags {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 30px;
+        gap: 10px;
+        color: white;
+
+        & .tag {
+            padding: 2px 25px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            background-color: v.$common-red;
+        }
+    }
+}
+
