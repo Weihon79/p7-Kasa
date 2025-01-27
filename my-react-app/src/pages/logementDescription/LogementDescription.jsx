@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import RatingStars from '../../components/RatingStars/RatingStars';
 
 function LogementDescription({ logements }) {
   const { id } = useParams();
@@ -62,7 +63,7 @@ function LogementDescription({ logements }) {
                     </li>
                 ))}
             </ul>
-            
+            <RatingStars rating={logement.rating} />
         </div>
         </div>
     </div>
