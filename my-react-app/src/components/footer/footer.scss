@@ -1,0 +1,22 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 209px;
+    gap: 15px;
+
+    @media screen and (min-width: 769px) {
+        gap: 30px;
+    }
+
+    & p {
+        color: white;
+        font-size: 12px;
+
+        @media screen and (min-width: 769px) {
+            font-size: 24px;
+        }
+    }
+}

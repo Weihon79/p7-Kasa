@@ -2,28 +2,27 @@
 
 
 .collapse__dropdown {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 1023px;
+    margin: 0 auto;
+    margin-bottom: 19px;
+    gap: 19px;
 
     @media screen and (min-width: 769px) {
-        margin: 0 auto;
+        margin-bottom: 38px;
+        gap: 30px;
     }
 
     &__title {
     display: flex;
     justify-content: space-between;
     padding: 8px 16px;
-    width: 100%;
     background-color: #FF6060;
-    margin: 0 auto;
-    margin-top: 24px;
     border-radius: 5px;
 
-    @media screen and (min-width: 769px) {
-        width: 100%;
-    }
-
-        h2 {
+        & h2 {
             color: white;
             font-size: 16px;
             font-weight: 700;
@@ -33,7 +32,7 @@
             }
         }
 
-        p {
+        & p {
             display: flex;
             align-items: center;
             color: white;
@@ -52,31 +51,27 @@
         max-height: 0;
         opacity: 0;
         overflow: hidden;
+
         transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
     
         &.open {
-          max-height: 500px;
-          opacity: 1;
-        }
-
-        @media screen and (min-width: 769px) {
-            width: 100%;
+            max-height: 500px;
+            opacity: 1;
         }
 
         p {
             font-size: 20px;
             font-weight: 400;
             color: black;
-            margin: 0 auto;
             padding: 12px;
         }
     }
 }
 
 .collapse__dropdown__title i {
-    transform: rotate(0deg); /* Par défaut, la flèche pointe vers le haut */
+    transform: rotate(0deg);
   }
   
   .collapse__dropdown__title i.rotate {
-    transform: rotate(-180deg); /* Lors de l'ouverture, la flèche tourne à 180° */
+    transform: rotate(-180deg);
   }

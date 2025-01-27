@@ -9,18 +9,16 @@ function About() {
           <img src={aboutBanner} alt='banner' className='banner-container__image' />
         </div> 
 
-        <div className='collapse-container'>
-          <div className="collapse__dropdown">
-              {CollapseData.map((item) => {
-                return (
-                  <div key={item.id}>
-                    <Collapse content={item.content} title={item.title} />
-                  </div>
-                );
-              })}
-          </div>
+        <div className="collapse__dropdown">
+            {CollapseData.map((item) => {
+              return (
+                <div key={item.id}>
+                  <Collapse content={item.content} title={item.title} />
+                </div>
+              );
+            })}
         </div>
-      </div>  
+      </div> 
     );
   }
   
