@@ -70,8 +70,20 @@
 
 .collapse__dropdown__title i {
     transform: rotate(0deg);
-  }
+
+    @media screen and (min-width: 769px) {
+        font-size: 32px;
+    }
+
+    &:hover {
+        transform: scale(2);
+
+        @media screen and (min-width: 769px) {
+            transform: scale(1.5);
+        }
+    }
+}
   
-  .collapse__dropdown__title i.rotate {
+.collapse__dropdown__title i.rotate {
     transform: rotate(-180deg);
-  }
+}
