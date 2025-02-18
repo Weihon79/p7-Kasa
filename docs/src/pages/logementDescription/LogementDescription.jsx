@@ -44,14 +44,9 @@ function LogementDescription({ logements }) {
                   <i className="fa-solid fa-chevron-right"></i>
               </button>
 
-              <ul className="carousel__dots">
-                  {pictures.map((_, index) => (
-                      <li
-                          key={index}
-                          className={`carousel__dot ${index === currentImageIndex ? "active" : ""}`}
-                      ></li>
-                  ))}
-              </ul>
+              <div className="carousel__counter">
+                {currentImageIndex + 1}/{pictures.length}
+              </div>
           </div>
           
           <div className='logement-description__title'>

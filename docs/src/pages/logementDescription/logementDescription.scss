@@ -60,28 +60,20 @@
     }
 }
 
-.carousel__dots {
+.carousel__counter {
+    display: none;
     position: absolute;
+    bottom: 25px;
     left: 50%;
-    bottom: 15px;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 20px;
 
-    .carousel__dot {
-        width: 10px;
-        height: 10px;
-        margin: 0 5px;
-        background-color: black;
-        border-radius: 50%;
-        transition: background-color 0.3s;
-
-        &.active {
-            background-color: #FF6060; // Choisir la couleur de l'active
-        }
+    @media screen and (min-width: 769px) {
+        display: flex;
     }
 }
+
 
 .logement-description {
     position: relative;
