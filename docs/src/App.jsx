@@ -13,14 +13,14 @@ function App() {
     <>
       <div className='container'>
         <Header />
-        <Routes>
+        <Routes> {/* On passe logements en props */}
             <Route path="/" element={<Home logements={logements}/>} />
             <Route path="/about" element={<About />} />
             <Route path="/logement/:id" element={<LogementDescription logements={logements} />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-        <Footer />
+        <Footer /> {/* Affichage du footer et header sur toutes les pages */}
     </>
   );
 }

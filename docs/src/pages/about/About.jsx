@@ -5,10 +5,12 @@ import CollapseData from '../../data/collapses.json';
 function About() {
     return (
       <div className='section'>
+        {/* Affichage de la bannière en haut de la page */}
         <div className="banner-container">
           <img src={aboutBanner} alt='banner' className='banner-container__image' />
         </div> 
 
+        {/* Affichage des sections repliables */}
         <div className="collapse__dropdown">
             {CollapseData.map((item) => {
               return (
@@ -20,6 +22,6 @@ function About() {
         </div>
       </div> 
     );
-  }
+}
   
-  export default About;
+export default About;
