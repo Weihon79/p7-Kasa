@@ -6,15 +6,6 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.container {
-  margin: 0 15px;
-  max-width: 1240px;
-
-  @media screen and (min-width: 1240px) {
-    margin: 0 calc((100% - 1240px) / 2 + 15px); 
-  }
-}
-
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
